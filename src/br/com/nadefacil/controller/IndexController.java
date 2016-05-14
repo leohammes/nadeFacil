@@ -8,6 +8,6 @@ import javax.faces.bean.RequestScoped;
 public class IndexController {
 	
 	public String getMessage() {
-		return "PÁGINA INICIAL NADE FÁCIL";
+		return "leonardo";
 	}
 }

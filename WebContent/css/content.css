@@ -1,9 +1,18 @@
 @CHARSET "ISO-8859-1";
 
 #content {
-    display: inline-flex;
-    position: absolute;
-	width: 100%;
-    top: 100px;
-    left: 0;
+    background-color: white;
+    position: relative;
+    border-radius: 3px;
+    width: 80%;
+    left: 10%;
+    top: -15%;
+    box-shadow: -4px 5px 3px rgba(0,0,0,0.12),0 1px 3px rgba(0,0,0,0.24);
+}
+
+.content-wrapper {
+	background-color: #e9eaed;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
