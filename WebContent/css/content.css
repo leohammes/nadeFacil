@@ -1,13 +1,16 @@
 @CHARSET "ISO-8859-1";
 
 #content {
+    box-shadow: -4px 5px 3px rgba(0,0,0,0.12),0 1px 3px rgba(0,0,0,0.24);
     background-color: white;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
     position: relative;
     border-radius: 3px;
+    padding-top: 50px;
     width: 80%;
     left: 10%;
-    top: -15%;
-    box-shadow: -4px 5px 3px rgba(0,0,0,0.12),0 1px 3px rgba(0,0,0,0.24);
 }
 
 .content-wrapper {

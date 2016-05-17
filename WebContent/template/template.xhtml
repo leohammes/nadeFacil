@@ -6,44 +6,56 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
  
     <h:head>
-     	<title>NadeFácil Academia</title>
-     	<meta name="viewport" content="min-width=480px, initial-scale=1.0"></meta>
+     	<title>Nade Fácil Academia</title>
+     	<meta name="viewport" content="width=480, initial-scale=1.0"></meta>
+     	<link rel="stylesheet" type="text/css" href="/css/3rd/angular-material.min.css"></link>
      	<link rel="stylesheet" type="text/css" href="/css/content.css"></link>
      	<link rel="stylesheet" type="text/css" href="/css/footer.css"></link>
      	<link rel="stylesheet" type="text/css" href="/css/topbar.css"></link>
      	<link rel="stylesheet" type="text/css" href="/css/header.css"></link>
      	<link rel="stylesheet" type="text/css" href="/css/index.css"></link>
      	<link rel="stylesheet" type="text/css" href="/css/template.css"></link>
+     	<link rel="stylesheet" type="text/css" href="/css/3rd/bootstrap-3.0.3.min.css"></link>
     </h:head>
  
-    <h:body>
- 
-	<div id="page">
-	    <div id="header">
-			<ui:insert name="header" >
-			  <ui:include src="/template/header.xhtml" />
-			</ui:insert>
-	    </div>
- 		
- 		<div id="topbar">
- 			<ui:insert name="menu" >
-			  <ui:include src="/template/topbar.xhtml" />
-			</ui:insert>
- 		</div>
- 		
- 		<div class="content-wrapper">
-		    <div id="content">
-			  	<ui:insert name="content" >
-			 	  <ui:include src="/template/content.xhtml" />
-			   	</ui:insert>
+    <body ng-app="BlankApp">
+ 	
+		<script src="/js/3rd/jquery-2.2.3.min.js"></script>
+		<script src="/js/3rd/angular.min.js"></script>
+		<script src="/js/3rd/angular-animate.min.js"></script>
+		<script src="/js/3rd/angular-aria.min.js"></script>
+		<script src="/js/3rd/angular-messages.min.js"></script>
+		<script src="/js/3rd/angular-material.min.js"></script>
+		<script src="/js/3rd/ui-bootstrap.tpl.min.js"></script>
+		<script src="/js/main.js"></script>
+	 
+	 
+		<div id="page">
+		    <div id="header">
+				<ui:insert name="header" >
+				  <ui:include src="/template/header.xhtml" />
+				</ui:insert>
 		    </div>
-	    </div>
- 
-	    <div id="footer">
-	    	<ui:insert name="footer" >
-	    	  <ui:include src="/template/footer.xhtml" />
-	    	</ui:insert>
+	 		
+	 		<div id="topbar">
+	 			<ui:insert name="menu" >
+				  <ui:include src="/template/topbar.xhtml" />
+				</ui:insert>
+	 		</div>
+	 		
+	 		<div class="content-wrapper">
+			    <div id="content">
+				  	<ui:insert name="content" >
+				 	  <ui:include src="/template/content.xhtml" />
+				   	</ui:insert>
+			    </div>
+		    </div>
+	 
+		    <div id="footer">
+		    	<ui:insert name="footer" >
+		    	  <ui:include src="/template/footer.xhtml" />
+		    	</ui:insert>
     	    </div>
         </div>
-    </h:body>
+    </body>
 </html>

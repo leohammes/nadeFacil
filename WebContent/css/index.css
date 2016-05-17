@@ -1,2 +1,63 @@
 @CHARSET "ISO-8859-1";
 
+.carousel-controller {
+	position: relative;
+    width: 80%;
+    left: 10%;
+}
+
+.carousel {
+	width: 80%;
+}
+
+.slide-show {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.input-slide-toggle {
+	display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.slide-toggle {
+	width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.slide-toggle div {
+	width: 20px;
+	height: 20px;
+	background-color: gray;
+	margin-right: 5px;
+}
+
+.slide-show-image {
+	width: 80%;
+    height: 80%;
+    box-shadow: -4px 5px 3px rgba(0,0,0,0.12),0 1px 3px rgba(0,0,0,0.24);
+    -webkit-animation: fadeIn 0.3s;
+    animation: fadeIn 0.3s;
+}
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}  
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+.index-card {
+	width: 30%;
+}
+
+.cards-area {
+	padding-top: 100px;
+	display: inline-flex;
+    justify-content: center;
+}

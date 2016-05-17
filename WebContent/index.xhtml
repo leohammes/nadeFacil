@@ -8,7 +8,85 @@
     <h:body>
     	<ui:composition template="/template/template.xhtml">
     		<ui:define name="content">
-    			<h:outputLabel value="#{indexController.message}"></h:outputLabel>
+    			<form class="carousel-controller" ng-controller="IndexCtrl">
+    				<div class="slide-show">
+	    			<carousel>
+					  <slide ng-repeat="slide in slides">
+					    <img class="carousel-image" ng-src="{{slide.image}}"></img>
+					  </slide>
+					</carousel>
+					</div>
+				</form>
+    		
+    			<!--  div class="slide-show">
+	    			<ui:repeat value="#{indexController.slideShowImageSrcs}" var="src">
+					    <img src="#{src}" class="slide-show-image" alt="Nade Fácil"></img>
+					</ui:repeat>
+    			</div> 
+    			
+    			<form ng-controller="IndexCtrl">
+	    			<md-radio-group ng-model="slideShowIndex" class="input-slide-toggle">
+						<md-radio-button value="1" class="md-primary"></md-radio-button>
+						<md-radio-button value="2" class="md-primary"></md-radio-button>
+						<md-radio-button value="3" class="md-primary"></md-radio-button>
+				    </md-radio-group>
+			    </form> -->
+			   
+				<div class="cards-area">
+	    			<md-card class="index-card">
+				        <img src="#{indexController.imageSrc}" class="md-card-image" alt="Nade Fácil"></img>
+				        <md-card-title>
+				          <md-card-title-text>
+				            <span class="md-headline">#{indexController.title}</span>
+				          </md-card-title-text>
+				        </md-card-title>
+				        <md-card-content>
+				          <p>
+				            #{indexController.message}
+				          </p>
+				        </md-card-content>
+				        <md-card-actions layout="row" layout-align="end center">
+				          <md-button>Action 1</md-button>
+				          <md-button>Action 2</md-button>
+				        </md-card-actions>
+				      </md-card>
+				      
+				      <md-card class="index-card">
+				        <img src="#{indexController.imageSrc}" class="md-card-image" alt="Nade Fácil"></img>
+				        <md-card-title>
+				          <md-card-title-text>
+				            <span class="md-headline">#{indexController.title}</span>
+				          </md-card-title-text>
+				        </md-card-title>
+				        <md-card-content>
+				          <p>
+				            #{indexController.message}
+				          </p>
+				        </md-card-content>
+				        <md-card-actions layout="row" layout-align="end center">
+				          <md-button>Action 1</md-button>
+				          <md-button>Action 2</md-button>
+				        </md-card-actions>
+				      </md-card>
+				      
+				      <md-card class="index-card">
+				        <img src="#{indexController.imageSrc}" class="md-card-image" alt="Nade Fácil"></img>
+				        <md-card-title>
+				          <md-card-title-text>
+				            <span class="md-headline">#{indexController.title}</span>
+				          </md-card-title-text>
+				        </md-card-title>
+				        <md-card-content>
+				          <p>
+				            #{indexController.message}
+				          </p>
+				        </md-card-content>
+				        <md-card-actions layout="row" layout-align="end center">
+				          <md-button>Action 1</md-button>
+				          <md-button>Action 2</md-button>
+				        </md-card-actions>
+				      </md-card>
+				 </div>
     		</ui:define>
     	</ui:composition>
     </h:body>
