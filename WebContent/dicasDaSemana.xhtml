@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+      
+    <h:body>
+    	<ui:composition template="/template/template.xhtml">
+    		<ui:define name="content">
+    			<h1>Dicas da semana</h1>
+				<div class="cards-area">
+	    			<md-card class="index-card">
+				        <img src="#{indexController.imageSrc}" class="md-card-image" alt="Nade Fácil"></img>
+				        <md-card-title>
+				          <md-card-title-text>
+				            <span class="md-headline">#{indexController.title}</span>
+				          </md-card-title-text>
+				        </md-card-title>
+				        <md-card-content>
+				          <p>
+				            #{indexController.message}
+				          </p>
+				        </md-card-content>
+				        <md-card-actions layout="row" layout-align="end center">
+				          <md-button>Action 1</md-button>
+				          <md-button>Action 2</md-button>
+				        </md-card-actions>
+				      </md-card>
+				 </div>
+    		</ui:define>
+    	</ui:composition>
+    </h:body>
+ 
+</html>

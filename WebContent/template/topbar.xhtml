@@ -2,33 +2,36 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"   
+	  xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       >
     <body>
 	    <ui:composition>
-			<div class="topbar">
-				<div class="topbar-item">
-					<span>Página Inicial</span>
-				</div>
-				<div class="topbar-item">
-					<span>Modalidades</span>
-				</div>
-				<div class="topbar-item">
-					<span>Dicas da Semana</span>
-				</div>
-				<div class="topbar-item">
-					<span>História</span>
-				</div>
-				<div class="topbar-item">
-					<span>Contato</span>
-				</div>
-				<div class="topbar-item">
-					<span>Horários</span>
-				</div>
-				<div class="topbar-item">
-					<span>Galeria de imagens</span>
-				</div>
- 			</div>
+	    	<h:form style="height: 100%;">
+				<div class="topbar">
+					<div class="topbar-item">
+						<h:commandButton class="topbar-inner-item" value="Página Inicial" action="#{indexController.goToPaginaInicial}" />
+					</div>
+					<div class="topbar-item">
+						<h:commandButton class="topbar-inner-item" value="Modalidades" action="#{indexController.goToModalidades}" />
+					</div>
+					<div class="topbar-item">
+						<h:commandButton class="topbar-inner-item" value="Dicas da Semana" action="#{indexController.goToDicasDaSemana}" />
+					</div>
+					<div class="topbar-item">
+						<h:commandButton class="topbar-inner-item" value="História" action="#{indexController.goToHistoria}" />
+					</div>
+					<div class="topbar-item">
+						<h:commandButton class="topbar-inner-item" value="Contato" action="#{indexController.goToContato}" />
+					</div>
+					<div class="topbar-item">
+						<h:commandButton class="topbar-inner-item" value="Horários" action="#{indexController.goToHorarios}" />
+					</div>
+					<div class="topbar-item">
+						<h:commandButton class="topbar-inner-item" value="Galeria de imagens" action="#{indexController.goToGaleria}" />
+					</div>
+	 			</div>
+ 			</h:form>
 	    </ui:composition>
     </body>
 </html>

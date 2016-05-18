@@ -18,6 +18,34 @@ public class IndexController {
 		return srcs;
 	}
 	
+	public String goToPaginaInicial() {
+		return "/index?faces-redirect=true";
+	}
+	
+	public String goToModalidades() {
+	    return "/modalidades?faces-redirect=true";
+	}
+	
+	public String goToDicasDaSemana() {
+		return "/dicasDaSemana?faces-redirect=true";
+	}
+	
+	public String goToHistoria() {
+		return "/historia?faces-redirect=true";
+	}
+	
+	public String goToContato() {
+		return "/contato?faces-redirect=true";
+	}
+	
+	public String goToHorarios() {
+		return "/horarios?faces-redirect=true";
+	}
+	
+	public String goToGaleria() {
+		return "/galeria?faces-redirect=true";
+	}
+	
 	public String getImageSrc() {
 		return "/image/natacao-card-header.jpg";
 	}
