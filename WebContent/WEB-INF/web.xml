@@ -15,7 +15,9 @@
 		<dispatcher>REQUEST</dispatcher>
 		<dispatcher>ERROR</dispatcher>
 	</filter-mapping>
-
+	<listener>
+	  <listener-class>br.com.nadefacil.service.GuiceContextListener</listener-class>
+	</listener>
 	<display-name>NadeFacil</display-name>
 	<welcome-file-list>
 		<welcome-file>index.xhtml</welcome-file>
