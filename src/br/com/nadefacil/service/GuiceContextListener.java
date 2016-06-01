@@ -8,6 +8,7 @@ import javax.servlet.ServletContextListener;
 
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 import org.mybatis.guice.MyBatisModule;
+import org.mybatis.guice.datasource.builtin.PooledDataSourceProvider;
 import org.mybatis.guice.datasource.dbcp.BasicDataSourceProvider;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
 
@@ -20,16 +21,19 @@ import br.com.nadefacil.mapper.HintMapper;
 
 public class GuiceContextListener implements ServletContextListener {
 
+	Injector injector;
+	AppService service;
+	
 	public void contextDestroyed(ServletContextEvent servletContextEvent) {
 		ServletContext servletContext = servletContextEvent.getServletContext();
 		servletContext.removeAttribute(Injector.class.getName());
 	}
 
 	public void contextInitialized(ServletContextEvent servletContextEvent) {
-		Injector injector = Guice.createInjector(new MyBatisModule() {
+		this.injector = Guice.createInjector(new MyBatisModule() {
 			@Override
 			protected void initialize() {
-				install(JdbcHelper.MySQL);
+				install(JdbcHelper.SQL_Server_MS_Driver);
 
 				environmentId("development");
 				bindDataSourceProviderType(BasicDataSourceProvider.class);
@@ -44,19 +48,25 @@ public class GuiceContextListener implements ServletContextListener {
 			}
 		});
 		
+		
+		
+		
 		ServletContext servletContext = servletContextEvent.getServletContext();
 		servletContext.setAttribute("injector", injector);
+		
+		
+		service = this.injector.getInstance(AppService.class);
+		this.service.doSimpleThing();
 	}
 
 	protected static Properties createServerProperties() {
 		Properties myBatisProperties = new Properties();
 
-		myBatisProperties.setProperty("JDBC.host", "localhost");
-		myBatisProperties.setProperty("JDBC.port", "3306");
-		myBatisProperties.setProperty("JDBC.schema", "ttcoach");
-
-		myBatisProperties.setProperty("JDBC.username", "root");
-		myBatisProperties.setProperty("JDBC.password", "");
+//		myBatisProperties.setProperty("JDBC.url", "jdbc:sqlserver://localhost\\sqlexpress;");
+		myBatisProperties.setProperty("JDBC.username", "nadefacil");
+//		myBatisProperties.setProperty("JDBC.driver", "com.microsoft.jdbc.SQLServerDriver");
+		myBatisProperties.setProperty("JDBC.password", "admin");
+		myBatisProperties.setProperty("JDBC.schema", "NadeFacil");
 		myBatisProperties.setProperty("JDBC.autoCommit", "false");
 		return myBatisProperties;
 	}

@@ -16,6 +16,6 @@ public class AppServiceImpl implements AppService {
 
 	public void doSimpleThing() {
 		List<Hint> staffList = hintMapper.selectAll();
-		Hint hint = hintMapper.selectByCode(1);
+		//Hint hint = hintMapper.selectByCode(1);
 	}
 }
