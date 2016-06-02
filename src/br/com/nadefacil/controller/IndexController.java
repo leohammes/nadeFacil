@@ -2,14 +2,14 @@ package br.com.nadefacil.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.ServletContext;
+import com.google.inject.Injector;
 
-import com.google.inject.Inject;
-
-import br.com.nadefacil.service.AppService;
-import br.com.nadefacil.service.AppServiceImpl;
+import br.com.nadefacil.bean.Hint;
+import br.com.nadefacil.service.HintService;
 
 @RequestScoped
 @ManagedBean
@@ -57,6 +57,15 @@ public class IndexController {
 	
 	public String getTitle() {
 		return "Natação";
+	}
+	
+	public List<Hint> getHints() {
+		ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+		Injector injector = (Injector) servletContext.getAttribute("injector");
+		HintService service = injector.getInstance(HintService.class);
+		List<Hint> hints = service.getAllHints();
+		
+		return hints;
 	}
 	
 	public String getMessage() {
