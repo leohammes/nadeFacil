@@ -1,6 +1,7 @@
 package br.com.nadefacil.service;
 
 import java.util.List;
+
 import br.com.nadefacil.bean.Image;
 
 public interface ImageService {

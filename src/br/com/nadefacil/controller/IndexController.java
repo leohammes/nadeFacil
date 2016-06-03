@@ -8,6 +8,7 @@ import javax.faces.context.FacesContext;
 import javax.servlet.ServletContext;
 import com.google.inject.Injector;
 
+import br.com.nadefacil.application.Page;
 import br.com.nadefacil.bean.Hint;
 import br.com.nadefacil.service.HintService;
 
@@ -63,12 +64,9 @@ public class IndexController {
 		ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
 		Injector injector = (Injector) servletContext.getAttribute("injector");
 		HintService service = injector.getInstance(HintService.class);
-		List<Hint> hints = service.getAllHints();
+		
+		List<Hint> hints = service.getAllHints(Page.INDEX);
 		
 		return hints;
-	}
-	
-	public String getMessage() {
-		return "Natação é a capacidade do homem e de outros animais de se deslocarem através de movimentos efetuados no meio líquido, geralmente sem ajuda artificial. A natação é uma atividade que pode ser simultaneamente útil e recreativa. As suas principais utilizações são recreativas, balneares, pesca, exercício e desporto.";
 	}
 }

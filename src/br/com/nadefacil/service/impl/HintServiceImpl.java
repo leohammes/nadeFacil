@@ -2,6 +2,8 @@ package br.com.nadefacil.service.impl;
 
 import java.util.List;
 import com.google.inject.Inject;
+
+import br.com.nadefacil.application.Page;
 import br.com.nadefacil.bean.Hint;
 import br.com.nadefacil.mapper.HintMapper;
 import br.com.nadefacil.service.HintService;
@@ -21,8 +23,8 @@ public class HintServiceImpl implements HintService {
 	}
 
 	@Override
-	public List<Hint> getAllHints() {
-		List<Hint> hints = hintMapper.selectAll();
+	public List<Hint> getAllHints(Page page) {
+		List<Hint> hints = hintMapper.selectAll(page.ordinal());
 		return hints;
 	}
 

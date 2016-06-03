@@ -16,15 +16,14 @@ import br.com.nadefacil.service.HintService;
 
 @RequestScoped
 @ManagedBean
-public class ModesController {
+public class HintsController {
 
 	public List<Hint> getHints() {
 		ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
 		Injector injector = (Injector) servletContext.getAttribute("injector");
 		HintService service = injector.getInstance(HintService.class);
-		
-		List<Hint> hints = service.getAllHints(Page.MODES);
-		
+		List<Hint> hints = service.getAllHints(Page.HINTS);
 		return hints;
-	}	
+	}
+	
 }

@@ -10,23 +10,24 @@
     		<ui:define name="content">
     			<h1>Dicas da semana</h1>
 				<div class="cards-area">
-	    			<md-card class="index-card">
-				        <img src="#{indexController.imageSrc}" class="md-card-image" alt="Nade Fácil"></img>
-				        <md-card-title>
-				          <md-card-title-text>
-				            <span class="md-headline">#{indexController.title}</span>
-				          </md-card-title-text>
-				        </md-card-title>
-				        <md-card-content>
-				          <p>
-				            #{indexController.message}
-				          </p>
-				        </md-card-content>
-				        <md-card-actions layout="row" layout-align="end center">
-				          <md-button>Action 1</md-button>
-				          <md-button>Action 2</md-button>
-				        </md-card-actions>
-				      </md-card>
+	    			<ui:repeat value="#{hintsController.hints}" var="hint">
+						<md-card class="index-card">
+						  <img src="#{hint.image.serverPath}#{hint.image.name}" class="md-card-image" alt="Nade Fácil"></img>
+						  <md-card-title>
+						    <md-card-title-text>
+						      <span class="md-headline">#{hint.title}</span>
+						    </md-card-title-text>
+						  </md-card-title>
+						  <md-card-content>
+						    <p>
+						      #{hint.description}
+						    </p>
+						  </md-card-content>
+						  <md-card-actions layout="row" layout-align="end center">
+						    <md-button>Leia Mais</md-button>
+						  </md-card-actions>
+						</md-card>
+					</ui:repeat>
 				 </div>
     		</ui:define>
     	</ui:composition>

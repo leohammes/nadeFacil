@@ -9,6 +9,7 @@ public class Hint {
 	private String description;
 	private Image image;
 	private Date date;
+	private int pageCode;
 
 	public int getId() {
 		return id;
@@ -48,5 +49,13 @@ public class Hint {
 
 	public void setImage(Image image) {
 		this.image = image;
+	}
+
+	public int getPageCode() {
+		return pageCode;
+	}
+
+	public void setPageCode(int pageCode) {
+		this.pageCode = pageCode;
 	}
 }
