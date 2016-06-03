@@ -6,10 +6,10 @@ import javax.faces.bean.RequestScoped;
 
 @RequestScoped
 @ManagedBean
-public class MainController {
+public class ModesController {
 
 	@PostConstruct
-	public void init(){
+	public void init() {
 		System.out.println(" Main executou ");
 		
 	    //senha admin123 mysql
