@@ -31,31 +31,37 @@
 						<md-radio-button value="3" class="md-primary"></md-radio-button>
 				    </md-radio-group>
 			    </form> -->
-			    
-			    
-			    
-				<div class="cards-area">
-					<ui:repeat value="#{indexController.hints}" var="hint">
-						<md-card class="index-card">
-						  <img src="#{hint.image.serverPath}#{hint.image.name}" class="md-card-image" alt="Nade Fácil"></img>
-						  <md-card-title>
-						    <md-card-title-text>
-						      <span class="md-headline">#{hint.title}</span>
-						    </md-card-title-text>
-						  </md-card-title>
-						  <md-card-content>
-						    <p>
-						      #{hint.description}
-						    </p>
-						  </md-card-content>
-						  <md-card-actions layout="row" layout-align="end center">
-						    <md-button>Leia Mais</md-button>
-						  </md-card-actions>
-						</md-card>
-					</ui:repeat>
-			 	</div>
+			    <h:form>
+					<div class="cards-area">
+						<ui:repeat value="#{indexController.hints}" var="hint">
+							<md-card class="index-card">
+							  <img src="#{hint.image.serverPath}#{hint.image.name}" class="md-card-image" alt="Nade Fácil"></img>
+							  <md-card-title>
+							    <md-card-title-text>
+							      <span class="md-headline">#{hint.title}</span>
+							    </md-card-title-text>
+							  </md-card-title>
+							  <md-card-content>
+							    <p>
+							      #{hint.description}
+							    </p>
+							  </md-card-content>
+							  <md-card-actions layout="row" layout-align="end center">
+							    <h:commandButton class="md-button md-ink-ripple" value="Leia Mais" action="#{indexController.readMoreAction(hint.id)}"/>
+							  </md-card-actions>
+							</md-card>
+						</ui:repeat>
+				 	</div>
+			 	</h:form>
+			 	<div class="index-footer-informations">
+					<h1>Onde Estamos!</h1>
+				</div>
+				<div class="index-footer">
+					<div class="map-container">
+						<iframe class="map-location" src="#{indexController.GMapLocation}" frameborder="0"></iframe>
+					</div>
+				</div>
     		</ui:define>
     	</ui:composition>
     </h:body>
- 
 </html>

@@ -9,27 +9,28 @@
     	<ui:composition template="/template/template.xhtml">
     		<ui:define name="content">
     			<h1>Modalidades</h1>
-    			
-    			<div class="cards-area">
-	    			<ui:repeat value="#{modesController.hints}" var="hint">
-						<md-card class="index-card">
-						  <img src="#{hint.image.serverPath}#{hint.image.name}" class="md-card-image" alt="Nade Fácil"></img>
-						  <md-card-title>
-						    <md-card-title-text>
-						      <span class="md-headline">#{hint.title}</span>
-						    </md-card-title-text>
-						  </md-card-title>
-						  <md-card-content>
-						    <p>
-						      #{hint.description}
-						    </p>
-						  </md-card-content>
-						  <md-card-actions layout="row" layout-align="end center">
-						    <md-button>Leia Mais</md-button>
-						  </md-card-actions>
-						</md-card>
-					</ui:repeat>
-				 </div>
+    			<h:form>
+	    			<div class="cards-area">
+		    			<ui:repeat value="#{modesController.hints}" var="hint">
+							<md-card class="index-card">
+							  <img src="#{hint.image.serverPath}#{hint.image.name}" class="md-card-image" alt="Nade Fácil"></img>
+							  <md-card-title>
+							    <md-card-title-text>
+							      <span class="md-headline">#{hint.title}</span>
+							    </md-card-title-text>
+							  </md-card-title>
+							  <md-card-content>
+							    <p>
+							      #{hint.description}
+							    </p>
+							  </md-card-content>
+							  <md-card-actions layout="row" layout-align="end center">
+							    <h:commandButton class="md-button md-ink-ripple" value="Leia Mais" action="#{modesController.readMoreAction(hint.id)}" />
+							  </md-card-actions>
+							</md-card>
+						</ui:repeat>
+					 </div>
+				 </h:form>
     		</ui:define>
     	</ui:composition>
     </h:body>

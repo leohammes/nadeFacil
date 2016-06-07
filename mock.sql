@@ -13,8 +13,8 @@ VALUES
 
 INSERT INTO CARD (title, description, image, date, page_code)
 VALUES
-('A Academia', 'A Nade Fácil academia atua na área dos esportes aquáticos, como por exemplo, natação e hidroginástica. Conta com uma equipe formada e super preparada para ajudar você a aprender ou aprimorar a habilidade de nadar. Sua piscina tem comprimento de 12,5m e as aulas intercalam entre natação e hidroginástica durante os dias da semana.',
-13, Convert(date, getdate()), 4);
+('Hidroginástica', 'A hidroginástica é um exercício aeróbico feito em piscinas que tem como objetivo a manutenção profilática da saúde. Melhora a capacidade aeróbica, a resistência cardiorespiratória, a resistência e a força muscular, a flexibilidade, além de proporcionar um gasto calórico de 260 a 400 kcal por hora dependendo da intensidade em que o praticante realiza os exercícios.',
+14, Convert(date, getdate()), 5);
 
 INSERT INTO CARD (title, description, image, date, page_code)
 VALUES

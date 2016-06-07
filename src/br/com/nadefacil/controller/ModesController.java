@@ -1,10 +1,11 @@
 package br.com.nadefacil.controller;
 
+import java.io.IOException;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletContext;
 
@@ -26,5 +27,11 @@ public class ModesController {
 		List<Hint> hints = service.getAllHints(Page.MODES);
 		
 		return hints;
-	}	
+	}
+	
+	public String readMoreAction(int id) throws IOException {
+		ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
+		ec.redirect("/modalidades/" + id);
+		return "/";
+	}
 }

@@ -1,9 +1,11 @@
 package br.com.nadefacil.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletContext;
 import com.google.inject.Injector;
@@ -56,8 +58,14 @@ public class IndexController {
 		return "/image/natacao-card-header.jpg";
 	}
 	
-	public String getTitle() {
-		return "Natação";
+	public String getGMapLocation() {
+		return "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.5362006074997!2d-49.08147918536033!3d-26.886472898585208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94df1f1fa0e67a99%3A0x18ab15eb5b366fdd!2sNade+F%C3%A1cil+Academia+de+Nata%C3%A7%C3%A3o+e+Hidrogin%C3%A1stica!5e0!3m2!1spt-BR!2sbr!4v1465000066827";
+	}
+	
+	public String readMoreAction(int id) throws IOException {
+		ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
+		ec.redirect("/index/" + id);
+		return "/";
 	}
 	
 	public List<Hint> getHints() {

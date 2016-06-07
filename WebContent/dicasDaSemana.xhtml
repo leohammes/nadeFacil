@@ -5,10 +5,11 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
       
-    <h:body>
-    	<ui:composition template="/template/template.xhtml">
-    		<ui:define name="content">
-    			<h1>Dicas da semana</h1>
+   <h:body>
+   	<ui:composition template="/template/template.xhtml">
+   		<ui:define name="content">
+   			<h1>Dicas da semana</h1>
+   			<h:form>
 				<div class="cards-area">
 	    			<ui:repeat value="#{hintsController.hints}" var="hint">
 						<md-card class="index-card">
@@ -24,13 +25,13 @@
 						    </p>
 						  </md-card-content>
 						  <md-card-actions layout="row" layout-align="end center">
-						    <md-button>Leia Mais</md-button>
+						    <h:commandButton class="md-button md-ink-ripple" value="Leia Mais" action="#{hintsController.readMoreAction(hint.id)}"/>
 						  </md-card-actions>
 						</md-card>
 					</ui:repeat>
 				 </div>
-    		</ui:define>
-    	</ui:composition>
-    </h:body>
- 
+			 </h:form>
+   		</ui:define>
+   	</ui:composition>
+   </h:body>
 </html>
