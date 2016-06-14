@@ -8,7 +8,9 @@
    <h:body>
    	<ui:composition template="/template/template.xhtml">
    		<ui:define name="content">
-   			<h1>Dicas da semana</h1>
+   			<div class="big-title border-bottom">
+   				<h1>Dicas da semana</h1>
+   			</div>
    			<h:form>
 				<div class="cards-area">
 	    			<ui:repeat value="#{hintsController.hints}" var="hint">

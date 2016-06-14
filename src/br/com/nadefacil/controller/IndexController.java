@@ -26,31 +26,58 @@ public class IndexController {
 		return srcs;
 	}
 	
+	public void setCurrentPage(int ordinalPage) {
+		for (Page page : Page.values()) {
+			if (page.ordinal() == ordinalPage) {
+				setCurrentPage(page);
+				break;
+			}
+		}
+	}
+	
+	public void setCurrentPage(Page currentPage) {
+		ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+		servletContext.setAttribute("selectedPage", currentPage);
+	}
+	
+	public Page getSelectedPage() {
+		ServletContext servletContext = (ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext();
+		servletContext.getAttribute("selectedPage");
+		return (Page) servletContext.getAttribute("selectedPage");
+	}
+	
 	public String goToPaginaInicial() {
+		setCurrentPage(Page.INDEX);
 		return "/index?faces-redirect=true";
 	}
 	
 	public String goToModalidades() {
+		setCurrentPage(Page.MODES);
 	    return "/modalidades?faces-redirect=true";
 	}
 	
 	public String goToDicasDaSemana() {
+		setCurrentPage(Page.HINTS);
 		return "/dicasDaSemana?faces-redirect=true";
 	}
 	
 	public String goToHistoria() {
+		setCurrentPage(Page.HISTORY);
 		return "/historia?faces-redirect=true";
 	}
 	
 	public String goToContato() {
+		setCurrentPage(Page.CONTACT);
 		return "/contato?faces-redirect=true";
 	}
 	
 	public String goToHorarios() {
+		setCurrentPage(Page.SCHEDULE);
 		return "/horarios?faces-redirect=true";
 	}
 	
 	public String goToGaleria() {
+		setCurrentPage(Page.GALLERY);
 		return "/galeria?faces-redirect=true";
 	}
 	

@@ -17,6 +17,15 @@
     display: flex;
 }
 
+.topbar-item input {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.topbar-item.selected {
+	background-color: #cccccc;
+}
+
 .topbar-item:hover {
 	background-color: #DDD;
 	

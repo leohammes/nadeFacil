@@ -9,27 +9,27 @@
 	    <ui:composition>
 	    	<h:form style="height: 100%;">
 				<div class="topbar">
-					<div class="topbar-item">
+					<h:panelGroup layout="block" styleClass="#{indexController.selectedPage.ordinal() == 4 ? 'selected topbar-item' : 'topbar-item'}">
 						<h:commandButton class="topbar-inner-item" value="Página Inicial" action="#{indexController.goToPaginaInicial}" />
-					</div>
-					<div class="topbar-item">
+					</h:panelGroup>
+					<h:panelGroup layout="block" styleClass="#{indexController.selectedPage.ordinal() == 5 ? 'selected topbar-item' : 'topbar-item'}">
 						<h:commandButton class="topbar-inner-item" value="Modalidades" action="#{indexController.goToModalidades}" />
-					</div>
-					<div class="topbar-item">
+					</h:panelGroup>
+					<h:panelGroup layout="block" styleClass="#{indexController.selectedPage.ordinal() == 2 ? 'selected topbar-item' : 'topbar-item'}">
 						<h:commandButton class="topbar-inner-item" value="Dicas da Semana" action="#{indexController.goToDicasDaSemana}" />
-					</div>
-					<div class="topbar-item">
+					</h:panelGroup>
+					<h:panelGroup layout="block" styleClass="#{indexController.selectedPage.ordinal() == 3 ? 'selected topbar-item' : 'topbar-item'}">
 						<h:commandButton class="topbar-inner-item" value="História" action="#{indexController.goToHistoria}" />
-					</div>
-					<div class="topbar-item">
+					</h:panelGroup>
+					<h:panelGroup layout="block" styleClass="#{indexController.selectedPage.ordinal() == 0 ? 'selected topbar-item' : 'topbar-item'}">
 						<h:commandButton class="topbar-inner-item" value="Contato" action="#{indexController.goToContato}" />
-					</div>
-					<div class="topbar-item">
+					</h:panelGroup>
+					<h:panelGroup layout="block" styleClass="#{indexController.selectedPage.ordinal() == 6 ? 'selected topbar-item' : 'topbar-item'}">
 						<h:commandButton class="topbar-inner-item" value="Horários" action="#{indexController.goToHorarios}" />
-					</div>
-					<div class="topbar-item">
+					</h:panelGroup>
+					<h:panelGroup layout="block" styleClass="#{indexController.selectedPage.ordinal() == 1 ? 'selected topbar-item' : 'topbar-item'}">
 						<h:commandButton class="topbar-inner-item" value="Galeria de imagens" action="#{indexController.goToGaleria}" />
-					</div>
+					</h:panelGroup>
 	 			</div>
  			</h:form>
 	    </ui:composition>

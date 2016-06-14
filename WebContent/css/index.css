@@ -1,5 +1,17 @@
 @CHARSET "ISO-8859-1";
 
+@media all and (max-width: 500px) {
+    .big-title h1 {
+	    font-size: 3em !important;
+	}
+}
+
+@media all and (max-width: 760px) and (min-width: 500px) {
+    .big-title h1 {
+	    font-size: 4em !important;
+	}
+}
+
 .carousel-controller {
     position: relative;
     width: 100%;
@@ -56,6 +68,7 @@
 
 .index-card {
 	width: 300px;
+	min-width: 280px;
 }
 
 .index-card .md-card-image {
@@ -67,6 +80,7 @@
 	padding-top: 100px;
 	display: inline-flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .map-container {
@@ -84,7 +98,13 @@
 	height: 100%;
 }
 
-.index-footer-informations {
+.big-title.border-bottom {
+	border-bottom: 1px solid #e9eaed !important;
+	border-top: none;
+	margin-top: 0px !important;
+}
+
+.big-title {
 	height: 100px;
     display: inline-flex;
     justify-content: center;
@@ -96,8 +116,8 @@
     margin-bottom: 30px;
 }
 
-.index-footer-informations h1 {
+.big-title h1 {
 	color: black;
-    font-size: 5.2em;
+    font-size: 5em;
     font-family: 'Muli', sans-serif;
 }

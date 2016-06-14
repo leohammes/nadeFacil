@@ -18,36 +18,43 @@
       <url-mapping id="home"> 
           <pattern value="/" /> 
           <view-id>/index.xhtml</view-id>
+          <action>#{indexController.setCurrentPage(4)}</action>
       </url-mapping> 
       
       <url-mapping id="contato"> 
           <pattern value="/contato" /> 
           <view-id>/contato.xhtml</view-id>
+          <action>#{indexController.setCurrentPage(0)}</action>
       </url-mapping> 
       
       <url-mapping id="dicas"> 
           <pattern value="/dicas" /> 
           <view-id>/dicasDaSemana.xhtml</view-id>
+          <action>#{indexController.setCurrentPage(2)}</action>
       </url-mapping>
       
       <url-mapping id="galeria"> 
           <pattern value="/galeria" /> 
           <view-id>/galeria.xhtml</view-id>
+          <action>#{indexController.setCurrentPage(1)}</action>
       </url-mapping>
       
       <url-mapping id="historia"> 
           <pattern value="/historia" /> 
           <view-id>/historia.xhtml</view-id>
+          <action>#{indexController.setCurrentPage(3)}</action>
       </url-mapping>
       
       <url-mapping id="horarios"> 
           <pattern value="/horarios" /> 
           <view-id>/horarios.xhtml</view-id>
+          <action>#{indexController.setCurrentPage(6)}</action>
       </url-mapping>
       
       <url-mapping id="modalidades"> 
           <pattern value="/modalidades" /> 
           <view-id>/modalidades.xhtml</view-id>
+          <action>#{indexController.setCurrentPage(5)}</action>
       </url-mapping>
       
      <!-- <url-mapping id="viewCategory">
