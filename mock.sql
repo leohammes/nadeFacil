@@ -1,7 +1,10 @@
-SELECT * FROM CARD
-SELECT * FROM IMAGE
+SELECT * FROM CARD;
+SELECT * FROM IMAGE;
 
---UPDATE CARD SET DESCRIPTION='Elas são ricas em vitaminas, minerais e fibras. Estas últimas proporcionam a sensação de saciedade e auxiliam o bom funcionamento do intestino.' WHERE ID = 2;
+DELETE FROM CARD WHERE ID = 1011;
+DELETE FROM IMAGE WHERE ID = 1021;
+
+UPDATE CARD SET SHORT_DESCRIPTION='Clique em leia mais e conheça toda a nossa história, desde o surgimento até agora.' WHERE ID = 8;
 UPDATE CARD SET PAGE_CODE=5 WHERE ID = 7;
 
 INSERT INTO IMAGE (name, server_path) values ('hidroginastica.jpg', '/image/')
@@ -20,3 +23,18 @@ INSERT INTO CARD (title, description, image, date, page_code)
 VALUES
 ('A Academia', 'A Nade Fácil academia atua na área dos esportes aquáticos, como por exemplo, natação e hidroginástica. Conta com uma equipe formada e super preparada para ajudar você a aprender ou aprimorar a habilidade de nadar. Sua piscina tem comprimento de 12,5m e as aulas intercalam entre natação e hidroginástica durante os dias da semana.',
 13, Convert(date, getdate()), 4);
+
+
+create table users (
+  user_name         varchar(15) not null primary key,
+  user_pass         varchar(15) not null
+);
+
+create table user_roles (
+  user_name         varchar(15) not null,
+  role_name         varchar(15) not null,
+  primary key (user_name, role_name)
+);
+
+insert into users (user_name, user_pass) values ('leonardo', '@123leo');
+insert into user_roles (user_name, role_name) values ('leonardo', 'admin');

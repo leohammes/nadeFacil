@@ -7,6 +7,7 @@ public class Hint {
 	private int id;
 	private String title;
 	private String description;
+	private String shortDescription;
 	private Image image;
 	private Date date;
 	private int pageCode;
@@ -57,5 +58,13 @@ public class Hint {
 
 	public void setPageCode(int pageCode) {
 		this.pageCode = pageCode;
+	}
+
+	public String getShortDescription() {
+		return shortDescription;
+	}
+
+	public void setShortDescription(String shortDescription) {
+		this.shortDescription = shortDescription;
 	}
 }

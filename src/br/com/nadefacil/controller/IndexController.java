@@ -26,6 +26,13 @@ public class IndexController {
 		return srcs;
 	}
 	
+	public void setCurrentPageByHintId(int cardId) {
+		FacesContext context = FacesContext.getCurrentInstance();
+		HintsController controller = context.getApplication().evaluateExpressionGet(context, "#{hintsController}", HintsController.class);
+		int pageCode = controller.getHintsService().getHint(cardId).getPageCode();
+		setCurrentPage(pageCode);
+	}
+	
 	public void setCurrentPage(int ordinalPage) {
 		for (Page page : Page.values()) {
 			if (page.ordinal() == ordinalPage) {

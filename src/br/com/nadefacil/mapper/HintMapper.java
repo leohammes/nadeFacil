@@ -16,22 +16,24 @@ import br.com.nadefacil.bean.Image;
 public interface HintMapper {
 	
 	final String SELECT_ALL = "SELECT * FROM CARD where page_code = #{pageCode}";
-	final String SELECT_BY_CODE = "SELECT * FROM CARD WHERE id = #{id} and page_code = #{pageCode}";
-	final String CREATE_HINT = "INSERT INTO CARD (TITLE, DESCRIPTION, IMAGE, DATE, PAGE_CODE) VALUES (#{hint.title}, #{hint.description}, #{hint.image.id}, Convert(date, getdate()), #{hint.pageCode})";
-	final String UPDATE_HINT = "UPDATE CARD SET TITLE=#{hint.title}, description=#{hint.description}, image=#{hint.image.id}, date=Convert(date, getdate()), page_code=#{hint.pageCode} where id=#{hint.id};";
+	final String SELECT_BY_CODE = "SELECT * FROM CARD WHERE id = #{id}";
+	final String CREATE_HINT = "INSERT INTO CARD (TITLE, DESCRIPTION, SHORT_DESCRIPTION, IMAGE, DATE, PAGE_CODE) VALUES (#{hint.title}, #{hint.description}, #{hint.shortDescription}, #{hint.image.id}, Convert(date, getdate()), #{hint.pageCode})";
+	final String UPDATE_HINT = "UPDATE CARD SET TITLE=#{hint.title}, description=#{hint.description}, short_description=#{hint.shortDescription}, image=#{hint.image.id}, date=Convert(date, getdate()), page_code=#{hint.pageCode} where id=#{hint.id};";
 	final String DELETE_HINT = "DELETE FROM CARD WHERE id=#{id};";
 
 	@Select(SELECT_ALL)
 	@Results(value = {
 		@Result(column = "image", property = "image", javaType=Image.class, one=@One(select="br.com.nadefacil.mapper.ImageMapper.selectByCode")),
-		@Result(column="page_code", property="pageCode")
+		@Result(column="page_code", property="pageCode"),
+		@Result(column="short_description", property="shortDescription")
 	})
 	List<Hint> selectAll(int pageCode);
 	
 	@Select(SELECT_BY_CODE)
 	@Results(value = {
 		@Result(column = "image", property = "image", javaType=Image.class, one=@One(select="br.com.nadefacil.mapper.ImageMapper.selectByCode")),
-		@Result(column="page_code", property="pageCode")
+		@Result(column="page_code", property="pageCode"),
+		@Result(column="short_description", property="shortDescription")
 	})
 	Hint selectByCode(int id);
 	

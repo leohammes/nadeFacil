@@ -16,4 +16,5 @@ public interface HintService {
 	public boolean updateHint(Hint hint);
 	
 	public boolean deleteHint(int hintId);
+
 }

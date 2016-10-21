@@ -7,13 +7,13 @@ angular.module('BlankApp', ['ngMaterial', 'ui.bootstrap'])
     $scope.slideShowInterval = 3000;
     $scope.slides = [
       {
-        image: '/image/slide-show-1.jpg'
+        image: '/images/?file=slide-show-1.jpg'
       },
       {
-        image: '/image/slide-show-2.jpg'
+        image: '/images/?file=slide-show-2.jpg'
       },
       {
-        image: '/image/slide-show-3.jpg'
+        image: '/images/?file=slide-show-3.jpg'
       }
     ];
     

@@ -33,6 +33,12 @@
           <action>#{indexController.setCurrentPage(2)}</action>
       </url-mapping>
       
+      <url-mapping id="info"> 
+          <pattern value="/info/#{hintsController.currentHintId}" /> 
+          <view-id>/dica.xhtml</view-id>
+          <action>#{indexController.setCurrentPageByHintId(hintsController.currentHintId)}</action>
+      </url-mapping>
+      
       <url-mapping id="galeria"> 
           <pattern value="/galeria" /> 
           <view-id>/galeria.xhtml</view-id>

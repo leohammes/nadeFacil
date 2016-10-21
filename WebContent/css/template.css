@@ -9,7 +9,7 @@ body {
 
 html {
 	font-family: 'Muli', sans-serif !important;
-    background-image: url("/image/header-image-3.jpg");
+    background-image: url("/images?file=header-image-3.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
