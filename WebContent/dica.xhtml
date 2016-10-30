@@ -12,7 +12,9 @@
    				<h1>#{hintsController.currentHint.title}</h1>
    			</div>
    			<h:form>
-				<h:outputText value="#{hintsController.currentHint.description}" escape="false"/>
+   				<div class="content-page">
+					<h:outputText value="#{hintsController.currentHint.description}" escape="false"/>
+				</div>
 			 </h:form>
    		</ui:define>
    	</ui:composition>
