@@ -27,6 +27,8 @@
 .slide-show {
     display: inline-flex;
     justify-content: center;
+    min-width: 200px;
+    min-height: 100px;
 }
 
 .input-slide-toggle {

@@ -2,7 +2,7 @@
  * You must include the dependency on 'ngMaterial' 
  */
 angular.module('BlankApp', ['ngMaterial', 'ui.bootstrap'])
-.controller('IndexCtrl', function($scope, $interval, $timeout) {
+.controller('IndexCtrl', function($scope, $element, $interval, $timeout) {
     $scope.slideShowIndex = 1;
     $scope.slideShowInterval = 3000;
     $scope.slides = [
@@ -50,12 +50,14 @@ angular.module('BlankApp', ['ngMaterial', 'ui.bootstrap'])
     
     function carouselInterval() {
     	return setInterval(function() {
-        	if ($scope.slideShowIndex == 3) {
-        		$scope.slideShowIndex = 1;
-        	} else {
-        		$scope.slideShowIndex++
-        	}
-        	$($(".carousel-indicators .ng-scope")[$scope.slideShowIndex - 1]).click();
+    		if (!$element.attr('static')) {
+	        	if ($scope.slideShowIndex == 3) {
+	        		$scope.slideShowIndex = 1;
+	        	} else {
+	        		$scope.slideShowIndex++
+	        	}
+	        	$($(".carousel-indicators .ng-scope")[$scope.slideShowIndex - 1]).click();
+    		}
         }, $scope.slideShowInterval);
     }
 });
